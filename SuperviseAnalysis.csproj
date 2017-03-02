@@ -1,0 +1,691 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A3FA5E7-B21E-4BC0-8E0E-605E383F84EC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperviseAnalysis</RootNamespace>
+    <AssemblyName>SuperviseAnalysis</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PageOffice">
+      <HintPath>..\..\..\公共类库\PageOffice.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dtree\dtree.css" />
+    <Content Include="css\filestyle.css" />
+    <Content Include="css\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="css\mapbase.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style1.css" />
+    <Content Include="dtree\img\base.gif" />
+    <Content Include="dtree\img\cd.gif" />
+    <Content Include="dtree\img\empty.gif" />
+    <Content Include="dtree\img\folder.gif" />
+    <Content Include="dtree\img\folderopen.gif" />
+    <Content Include="dtree\img\globe.gif" />
+    <Content Include="dtree\img\imgfolder.gif" />
+    <Content Include="dtree\img\join.gif" />
+    <Content Include="dtree\img\joinbottom.gif" />
+    <Content Include="dtree\img\line.gif" />
+    <Content Include="dtree\img\minus.gif" />
+    <Content Include="dtree\img\minusbottom.gif" />
+    <Content Include="dtree\img\musicfolder.gif" />
+    <Content Include="dtree\img\nolines_minus.gif" />
+    <Content Include="dtree\img\nolines_plus.gif" />
+    <Content Include="dtree\img\page.gif" />
+    <Content Include="dtree\img\plus.gif" />
+    <Content Include="dtree\img\plusbottom.gif" />
+    <Content Include="dtree\img\question.gif" />
+    <Content Include="dtree\img\trash.gif" />
+    <Content Include="images\arrow1.jpg" />
+    <Content Include="images\arrow1.png" />
+    <Content Include="images\arrow11.png" />
+    <Content Include="images\arrow12.png" />
+    <Content Include="images\arrow13.png" />
+    <Content Include="images\arrow14.png" />
+    <Content Include="images\arrow15.png" />
+    <Content Include="images\arrow16.png" />
+    <Content Include="images\arrow17.png" />
+    <Content Include="images\arrow18.png" />
+    <Content Include="images\arrow19.png" />
+    <Content Include="images\arrow2.jpg" />
+    <Content Include="images\arrow2.png" />
+    <Content Include="images\arrow20.png" />
+    <Content Include="images\arrow21.png" />
+    <Content Include="images\arrow22.png" />
+    <Content Include="images\arrow23.png" />
+    <Content Include="images\arrow24.png" />
+    <Content Include="images\arrow25.png" />
+    <Content Include="images\arrow26.png" />
+    <Content Include="images\arrow27.png" />
+    <Content Include="images\arrow28.png" />
+    <Content Include="images\arrow29.png" />
+    <Content Include="images\arrow3.png" />
+    <Content Include="images\arrow30.png" />
+    <Content Include="images\arrow31.png" />
+    <Content Include="images\arrow32.png" />
+    <Content Include="images\arrow33.png" />
+    <Content Include="images\arrow34.png" />
+    <Content Include="images\arrow35.png" />
+    <Content Include="images\arrow36.png" />
+    <Content Include="images\arrow37.png" />
+    <Content Include="images\arrow38.png" />
+    <Content Include="images\arrow4.png" />
+    <Content Include="images\arrow40.png" />
+    <Content Include="images\arrow41.png" />
+    <Content Include="images\arrow42.png" />
+    <Content Include="images\arrow43.png" />
+    <Content Include="images\arrow5.png" />
+    <Content Include="images\arrow6.png" />
+    <Content Include="images\bannner.jpg" />
+    <Content Include="images\biaoge_title_bj.jpg" />
+    <Content Include="images\biaoge_title_bj1.jpg" />
+    <Content Include="images\chakan.png" />
+    <Content Include="images\chakan2.png" />
+    <Content Include="images\danzhou.jpg" />
+    <Content Include="images\dibiao1.png" />
+    <Content Include="images\dibiao2.png" />
+    <Content Include="images\dibiao3.png" />
+    <Content Include="images\ditu.jpg" />
+    <Content Include="images\duigou.png" />
+    <Content Include="images\fenxitu01.jpg" />
+    <Content Include="images\fenxitu02.jpg" />
+    <Content Include="images\fenxitu03.jpg" />
+    <Content Include="images\footer_bj.jpg" />
+    <Content Include="images\gengduo.png" />
+    <Content Include="images\gengduo1.png" />
+    <Content Include="images\gengduo2.png" />
+    <Content Include="images\gengduo_title_bj.png" />
+    <Content Include="images\geshifenxitu.jpg" />
+    <Content Include="images\geshifenxitu1.jpg" />
+    <Content Include="images\guanbi.png" />
+    <Content Include="images\guanbi1.png" />
+    <Content Include="images\icon_excel.jpg" />
+    <Content Include="images\icon_jia.jpg" />
+    <Content Include="images\icon_jia1.jpg" />
+    <Content Include="images\icon_queding.jpg" />
+    <Content Include="images\icon_quxiao.jpg" />
+    <Content Include="images\icon_word.jpg" />
+    <Content Include="images\jiantou1.png" />
+    <Content Include="images\jiantou2.png" />
+    <Content Include="images\jiantou3.png" />
+    <Content Include="images\jiantou4.png" />
+    <Content Include="images\jindu_bj.jpg" />
+    <Content Include="images\jindu_bj1.jpg" />
+    <Content Include="images\kaizhan.png" />
+    <Content Include="images\lishiqingkuang_title_bj.jpg" />
+    <Content Include="images\list_btn_chaxun.jpg" />
+    <Content Include="images\list_btn_chaxun1.jpg" />
+    <Content Include="images\list_cont_left_bj1.jpg" />
+    <Content Include="images\list_cont_left_bj2.jpg" />
+    <Content Include="images\list_cont_right_left_title_bj.jpg" />
+    <Content Include="images\list_cont_right_title_bj.jpg" />
+    <Content Include="images\list_cont_right_title_nav_bj1.jpg" />
+    <Content Include="images\list_cont_right_title_nav_bj2.jpg" />
+    <Content Include="images\login_biao1.png" />
+    <Content Include="images\login_biao3.png" />
+    <Content Include="images\login_btn.png" />
+    <Content Include="images\login_btn1.png" />
+    <Content Include="images\login_kuang_bj.png" />
+    <Content Include="images\login_logo.jpg" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo_bj.jpg" />
+    <Content Include="images\logo_right.jpg" />
+    <Content Include="images\nav_qiehuan_bj.jpg" />
+    <Content Include="images\nav_qiehuan_jiantou1.jpg" />
+    <Content Include="images\nav_qiehuan_jiantou2.jpg" />
+    <Content Include="images\pdf.jpg" />
+    <Content Include="images\people.jpg" />
+    <Content Include="images\pic.jpg" />
+    <Content Include="images\ppt.jpg" />
+    <Content Include="images\qujian.jpg" />
+    <Content Include="images\shanchu.png" />
+    <Content Include="images\shanchu2.png" />
+    <Content Include="images\shangchuan.jpg" />
+    <Content Include="images\shangchuan1.jpg" />
+    <Content Include="images\shuangzhou.jpg" />
+    <Content Include="images\sousuo.jpg" />
+    <Content Include="images\sousuo1.jpg" />
+    <Content Include="images\sousuo2.jpg" />
+    <Content Include="images\tuichu.png" />
+    <Content Include="images\xiangqing_bj.png" />
+    <Content Include="images\xiangqing_guanbi.png" />
+    <Content Include="images\xiangqing_title.png" />
+    <Content Include="images\xiangqing_title1.png" />
+    <Content Include="images\xiazai.png" />
+    <Content Include="images\xiazai2.png" />
+    <Content Include="images\xinjianwenjianjai.jpg" />
+    <Content Include="images\xinjianwenjianjai1.jpg" />
+    <Content Include="images\xiugai.png" />
+    <Content Include="images\xiugai2.png" />
+    <Content Include="images\yemapic1.png" />
+    <Content Include="images\yemapic2.png" />
+    <Content Include="images\yemapic3.png" />
+    <Content Include="images\yemapic4.png" />
+    <Content Include="images\yemapic5.png" />
+    <Content Include="images\zhanbi.jpg" />
+    <Content Include="images\zhanbi01.jpg" />
+    <Content Include="js\ActiveReport\HouseBaseInfo.js" />
+    <Content Include="js\ActiveReport\CityHouseBaseInfo.js" />
+    <Content Include="js\ActiveReport\NationHouseBaseInfo.js" />
+    <Content Include="js\ActiveReport\ZSXMQKInfo.js" />
+    <Content Include="js\ActiveReport\YZXQZZSWQMXB.js" />
+    <Content Include="js\AnalysisList\NetLink.js" />
+    <Content Include="js\AnalysisList\single.js" />
+    <Content Include="js\AnalysisList\AddUpLink.js" />
+    <Content Include="js\AnalysisList\double.js" />
+    <Content Include="js\AnalysisList\HosingRate.js" />
+    <Content Include="js\angularjs\angular-ui-router.js" />
+    <Content Include="js\app.js" />
+    <Content Include="js\components\version\interpolate-filter.js" />
+    <Content Include="js\components\version\interpolate-filter_test.js" />
+    <Content Include="js\components\version\version-directive.js" />
+    <Content Include="js\components\version\version-directive_test.js" />
+    <Content Include="js\components\version\version.js" />
+    <Content Include="js\components\version\version_test.js" />
+    <Content Include="dtree\dtree.js" />
+    <Content Include="js\FileManager\FileManager.js" />
+    <Content Include="js\hightCharts\highcharts-ng.js" />
+    <Content Include="js\AnalysisList\PrjCounts.js" />
+    <Content Include="js\HomePage\indexBind.js" />
+    <Content Include="js\login.js" />
+    <Content Include="js\Nav\nav.js" />
+    <Content Include="js\UserManager\MenuList\MenuList.js" />
+    <Content Include="js\pageControl\pagecontrol.js" />
+    <Content Include="js\scriptjs.js" />
+    <Content Include="js\SuperviceList\XFQK.js" />
+    <Content Include="js\default\jquery-1.7.2.min.js" />
+    <Content Include="js\default\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="js\default\sliders.js" />
+    <Content Include="assets\bootstrap-colorpicker\css\colorpicker.css" />
+    <Content Include="assets\bootstrap-colorpicker\img\alpha.png" />
+    <Content Include="assets\bootstrap-colorpicker\img\hue.png" />
+    <Content Include="assets\bootstrap-colorpicker\img\saturation.png" />
+    <Content Include="assets\bootstrap-colorpicker\js\bootstrap-colorpicker.js" />
+    <Content Include="assets\bootstrap-datepicker\css\datepicker.css" />
+    <Content Include="assets\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="assets\bootstrap-daterangepicker\date.js" />
+    <Content Include="assets\bootstrap-daterangepicker\daterangepicker.css" />
+    <Content Include="assets\bootstrap-daterangepicker\daterangepicker.js" />
+    <Content Include="assets\chart-master\Chart.js" />
+    <Content Include="assets\ckeditor\ckeditor.js" />
+    <Content Include="assets\data-tables\DT_bootstrap.js" />
+    <Content Include="assets\data-tables\jquery.dataTables.js" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfont.svg" />
+    <Content Include="assets\fullcalendar\fullcalendar\bootstrap-fullcalendar.css" />
+    <Content Include="assets\fullcalendar\fullcalendar\fullcalendar.min.js" />
+    <Content Include="assets\gritter\css\jquery.gritter.css" />
+    <Content Include="assets\gritter\images\gritter-light.png" />
+    <Content Include="assets\gritter\images\gritter.png" />
+    <Content Include="assets\gritter\images\ie-spacer.gif" />
+    <Content Include="assets\gritter\js\jquery.gritter.js" />
+    <Content Include="assets\jquery-easy-pie-chart\jquery.easy-pie-chart.css" />
+    <Content Include="assets\jquery-easy-pie-chart\jquery.easy-pie-chart.js" />
+    <Content Include="assets\jquery-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="assets\jquery-file-upload\img\loading.gif" />
+    <Content Include="assets\jquery-file-upload\img\progressbar.gif" />
+    <Content Include="assets\jquery-file-upload\js\jquery.fileupload-fp.js" />
+    <Content Include="assets\jquery-file-upload\js\jquery.fileupload-ui.js" />
+    <Content Include="assets\jquery-file-upload\js\jquery.fileupload.js" />
+    <Content Include="assets\jquery-file-upload\js\jquery.iframe-transport.js" />
+    <Content Include="assets\jquery-file-upload\js\vendor\canvas-to-blob.min.js" />
+    <Content Include="assets\jquery-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Content Include="assets\jquery-file-upload\js\vendor\load-image.min.js" />
+    <Content Include="assets\jquery-file-upload\js\vendor\tmpl.min.js" />
+    <Content Include="assets\jquery-knob\js\jquery.knob.js" />
+    <Content Include="assets\jquery-ui\images\animated-overlay.gif" />
+    <Content Include="assets\jquery-ui\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="assets\jquery-ui\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="assets\jquery-ui\images\ui-icons_222222_256x240.png" />
+    <Content Include="assets\jquery-ui\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="assets\jquery-ui\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="assets\jquery-ui\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="assets\jquery-ui\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\jquery-ui\jquery-ui-1.10.1.custom.min.css" />
+    <Content Include="assets\jquery-ui\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="assets\morris.js-0.4.3\morris.css" />
+    <Content Include="assets\morris.js-0.4.3\morris.min.js" />
+    <Content Include="assets\morris.js-0.4.3\raphael-min.js" />
+    <Content Include="css\old\bootstrap-reset.css" />
+    <Content Include="css\old\bootstrap.min.css" />
+    <Content Include="css\old\mapbase.css" />
+    <Content Include="css\old\owl.carousel.css" />
+    <Content Include="css\old\style-responsive.css" />
+    <Content Include="css\old\style.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="html\404.html" />
+    <Content Include="html\500.html" />
+    <Content Include="html\basic_table.html" />
+    <Content Include="html\blank.html" />
+    <Content Include="html\buttons.html" />
+    <Content Include="html\calendar.html" />
+    <Content Include="html\charts.html" />
+    <Content Include="html\dynamic_table.html" />
+    <Content Include="html\font_awesome.html" />
+    <Content Include="html\form_component.html" />
+    <Content Include="html\form_validation.html" />
+    <Content Include="html\form_wizard.html" />
+    <Content Include="html\general.html" />
+    <Content Include="html\grids.html" />
+    <Content Include="html\inbox.html" />
+    <Content Include="html\index.html" />
+    <Content Include="html\invoice.html" />
+    <Content Include="html\login.html" />
+    <Content Include="html\profile-activity.html" />
+    <Content Include="html\profile-edit.html" />
+    <Content Include="html\profile.html" />
+    <Content Include="html\slider.html" />
+    <Content Include="html\widget.html" />
+    <Content Include="img\404_icon.png" />
+    <Content Include="img\500_icon.png" />
+    <Content Include="img\arrow-up.png" />
+    <Content Include="img\avatar-mini.jpg" />
+    <Content Include="img\avatar-mini2.jpg" />
+    <Content Include="img\avatar-mini3.jpg" />
+    <Content Include="img\avatar-mini4.jpg" />
+    <Content Include="img\avatar1.jpg" />
+    <Content Include="img\avatar1_small.jpg" />
+    <Content Include="img\chart-texture.jpg" />
+    <Content Include="img\chat-avatar.jpg" />
+    <Content Include="img\chat-avatar2.jpg" />
+    <Content Include="img\checkbox\check-off.png" />
+    <Content Include="img\checkbox\check-on.png" />
+    <Content Include="img\checkbox\radio-off.png" />
+    <Content Include="img\checkbox\radio-on.png" />
+    <Content Include="img\customSelect-arrow.gif" />
+    <Content Include="img\favicon.html" />
+    <Content Include="img\follower-avatar.jpg" />
+    <Content Include="img\left-arrow.png" />
+    <Content Include="img\mail-avatar.jpg" />
+    <Content Include="img\mask.png" />
+    <Content Include="img\pro-ac-1.png" />
+    <Content Include="img\pro-ac-2.png" />
+    <Content Include="img\product1.jpg" />
+    <Content Include="img\product2.png" />
+    <Content Include="img\product3.png" />
+    <Content Include="img\profile-avatar.jpg" />
+    <Content Include="img\right-arrow.png" />
+    <Content Include="img\ring.jpg" />
+    <Content Include="img\search-icon.jpg" />
+    <Content Include="img\sm-img-1.jpg" />
+    <Content Include="img\sm-img-2.jpg" />
+    <Content Include="img\sm-img-3.jpg" />
+    <Content Include="img\vector-lab.jpg" />
+    <Content Include="Index.html" />
+    <Content Include="js\oldjs\all-chartjs.js" />
+    <Content Include="js\Charts\drawCharts.js" />
+    <Content Include="js\parameters\parameterListObj.js" />
+    <Content Include="js\angularjs\angular.min.js" />
+    <Content Include="js\angularjs\jquery.min.js" />
+    <Content Include="js\oldjs\bootstrap-switch.js" />
+    <Content Include="js\oldjs\bootstrap.min.js" />
+    <Content Include="js\oldjs\common-scripts.js" />
+    <Content Include="js\oldjs\dynamic-table.js" />
+    <Content Include="js\oldjs\easy-pie-chart.js" />
+    <Content Include="js\oldjs\external-dragging-calendar.js" />
+    <Content Include="js\oldjs\form-component.js" />
+    <Content Include="js\oldjs\form-validation-script.js" />
+    <Content Include="js\oldjs\ga.js" />
+    <Content Include="js\oldjs\gritter.js" />
+    <Content Include="js\hightCharts\highcharts-more.js" />
+    <Content Include="js\hightCharts\highcharts.js" />
+    <Content Include="js\HomePage\index.js" />
+    <Content Include="js\jquery-1.10.2.js" />
+    <Content Include="js\jquery-1.8.3.min.js" />
+    <Content Include="js\oldjs\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="js\oldjs\jquery.customSelect.min.js" />
+    <Content Include="js\oldjs\jquery.js" />
+    <Content Include="js\oldjs\jquery.nicescroll.js" />
+    <Content Include="js\oldjs\jquery.scrollTo.min.js" />
+    <Content Include="js\oldjs\jquery.sparkline.js" />
+    <Content Include="js\oldjs\jquery.stepy.js" />
+    <Content Include="js\oldjs\jquery.tagsinput.js" />
+    <Content Include="js\oldjs\jquery.validate.min.js" />
+    <Content Include="js\map\mapbase.js" />
+    <Content Include="js\map\mapDraw.js" />
+    <Content Include="js\map\mapGeoUtils.js" />
+    <Content Include="js\map\mapRuler.js" />
+    <Content Include="js\oldjs\morris-script.js" />
+    <Content Include="js\oldjs\owl.carousel.js" />
+    <Content Include="js\oldjs\sliders.js" />
+    <Content Include="js\oldjs\sparkline-chart.js" />
+    <Content Include="js\SuperviceList\XMGK.js" />
+    <Content Include="js\SuperviceList\XMLX.js" />
+    <Content Include="js\SuperviceList\ZSJD.js" />
+    <Content Include="js\SuperviceList\QDXY.js" />
+    <Content Include="js\SuperviceList\XMWCQK.js" />
+    <Content Include="js\SuperviceList\FWZSBCJDQK.js" />
+    <Content Include="js\SuperviceList\QZZXQK.js" />
+    <Content Include="js\SuperviceList\FYQZZXQK.js" />
+    <Content Include="js\SuperviceList\ZFQZZXQK.js" />
+    <Content Include="js\SuperviceList\SSDW.js" />
+    <Content Include="js\SuperviceList\LCQXM.js" />
+    <Content Include="js\UserManager\MenuList\treeObject.js" />
+    <Content Include="js\UserManager\MenuList\AddMenuList.js" />
+    <Content Include="js\UserManager\UserList.js" />
+    <Content Include="js\UserManager\RoleList.js" />
+    <Content Include="Pages\AnalysisList\count1.html" />
+    <Content Include="Pages\AnalysisList\count2.html" />
+    <Content Include="Pages\AnalysisList\count3.html" />
+    <Content Include="Pages\AnalysisList\count4.html" />
+    <Content Include="Pages\AnalysisList\count5.html" />
+    <Content Include="Pages\AnalysisList\count6.html" />
+    <Content Include="Pages\Default.html" />
+    <Content Include="Pages\FileManager\FileManager.aspx" />
+    <Content Include="Pages\FileManager\pageoffice\SaveFile.aspx" />
+    <Content Include="Pages\FileManager\pageoffice\server.aspx" />
+    <Content Include="Pages\ActiveReport\form1.html" />
+    <Content Include="Pages\ActiveReport\form2.html" />
+    <Content Include="Pages\ActiveReport\form3.html" />
+    <Content Include="Pages\ActiveReport\form4.html" />
+    <Content Include="Pages\ActiveReport\form5.html" />
+    <Content Include="Pages\home.html" />
+    <Content Include="Pages\index.html" />
+    <Content Include="Pages\login.html" />
+    <Content Include="Pages\FileManager\manage.html" />
+    <Content Include="Pages\SuperviceList\PrjSuperviceList\XMLX.html" />
+    <Content Include="Pages\SuperviceList\PrjSuperviceList\ZSJD.html" />
+    <Content Include="Pages\SuperviceList\supervise1.html" />
+    <Content Include="Pages\SuperviceList\supervise10.html" />
+    <Content Include="Pages\SuperviceList\supervise11.html" />
+    <Content Include="Pages\SuperviceList\supervise12.html" />
+    <Content Include="Pages\SuperviceList\supervise2.html" />
+    <Content Include="Pages\SuperviceList\supervise3.html" />
+    <Content Include="Pages\SuperviceList\supervise4.html" />
+    <Content Include="Pages\SuperviceList\supervise5.html" />
+    <Content Include="Pages\SuperviceList\supervise6.html" />
+    <Content Include="Pages\SuperviceList\supervise7.html" />
+    <Content Include="Pages\SuperviceList\supervise8.html" />
+    <Content Include="Pages\SuperviceList\supervise9.html" />
+    <Content Include="Pages\UserManager\MenuList\MenuList.html" />
+    <Content Include="Pages\UserManager\MenuList\AddMenuList.html" />
+    <Content Include="Pages\UserManager\UserList.html" />
+    <Content Include="Pages\UserManager\RoleList.html" />
+    <Content Include="UserControl\Map\MapControl.ascx" />
+    <Content Include="UserControl\Tools\Inbox.ascx" />
+    <Content Include="UserControl\Tools\LeftMenu.ascx" />
+    <Content Include="UserControl\Tools\Notification.ascx" />
+    <Content Include="UserControl\Tools\Tasks.ascx" />
+    <Content Include="UserControl\Tools\UserLogin.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ztree\css\awesomeStyle\awesome.css" />
+    <Content Include="ztree\css\awesomeStyle\img\loading.gif" />
+    <Content Include="ztree\css\demo.css" />
+    <Content Include="ztree\css\metroStyle\img\line_conn.png" />
+    <Content Include="ztree\css\metroStyle\img\loading.gif" />
+    <Content Include="ztree\css\metroStyle\img\metro.gif" />
+    <Content Include="ztree\css\metroStyle\img\metro.png" />
+    <Content Include="ztree\css\metroStyle\metroStyle.css" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="ztree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="ztree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="ztree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="ztree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="ztree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="ztree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="ztree\js\jquery-1.4.4.min.js" />
+    <Content Include="ztree\js\jquery.ztree.all.js" />
+    <Content Include="ztree\js\jquery.ztree.all.min.js" />
+    <Content Include="ztree\js\jquery.ztree.core.js" />
+    <Content Include="ztree\js\jquery.ztree.core.min.js" />
+    <Content Include="ztree\js\jquery.ztree.excheck.js" />
+    <Content Include="ztree\js\jquery.ztree.excheck.min.js" />
+    <Content Include="ztree\js\jquery.ztree.exedit.js" />
+    <Content Include="ztree\js\jquery.ztree.exedit.min.js" />
+    <Content Include="ztree\js\jquery.ztree.exhide.js" />
+    <Content Include="ztree\js\jquery.ztree.exhide.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Handlers\AnalysisListHandler.ashx.cs">
+      <DependentUpon>AnalysisListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\CustomreportHandler.ashx.cs">
+      <DependentUpon>CustomreportHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\FileManagerHandler.ashx.cs">
+      <DependentUpon>FileManagerHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\HomePageHandler.ashx.cs">
+      <DependentUpon>HomePageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\LoadingDictionary.ashx.cs">
+      <DependentUpon>LoadingDictionary.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\LoginHandler.ashx.cs">
+      <DependentUpon>LoginHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\MenuListHandler.ashx.cs">
+      <DependentUpon>MenuListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\SuperviceListHandler.ashx.cs">
+      <DependentUpon>SuperviceListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\UserManagerHandler.ashx.cs">
+      <DependentUpon>UserManagerHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FileManager\FileManager.aspx.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FileManager\FileManager.aspx.designer.cs">
+      <DependentUpon>FileManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FileManager\pageoffice\SaveFile.aspx.cs">
+      <DependentUpon>SaveFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FileManager\pageoffice\SaveFile.aspx.designer.cs">
+      <DependentUpon>SaveFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\FileManager\pageoffice\server.aspx.cs">
+      <DependentUpon>server.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\FileManager\pageoffice\server.aspx.designer.cs">
+      <DependentUpon>server.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl\Map\MapControl.ascx.cs">
+      <DependentUpon>MapControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Map\MapControl.ascx.designer.cs">
+      <DependentUpon>MapControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Tools\Inbox.ascx.cs">
+      <DependentUpon>Inbox.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Tools\Inbox.ascx.designer.cs">
+      <DependentUpon>Inbox.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Tools\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Tools\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Tools\Notification.ascx.cs">
+      <DependentUpon>Notification.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Tools\Notification.ascx.designer.cs">
+      <DependentUpon>Notification.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Tools\Tasks.ascx.cs">
+      <DependentUpon>Tasks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Tools\Tasks.ascx.designer.cs">
+      <DependentUpon>Tasks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Tools\UserLogin.ascx.cs">
+      <DependentUpon>UserLogin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Tools\UserLogin.ascx.designer.cs">
+      <DependentUpon>UserLogin.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\font-awesome\font\fontawesome-webfontd41d.eot" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfontf77b.eot" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfontf77b.ttf" />
+    <Content Include="assets\font-awesome\font\fontawesome-webfontf77b.woff" />
+    <Content Include="fonts\Descr.WD3" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot%40" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="img\checkbox\Descr.WD3" />
+    <Content Include="img\Descr.WD3" />
+    <Content Include="Handlers\AnalysisListHandler.ashx" />
+    <Content Include="Handlers\SuperviceListHandler.ashx" />
+    <Content Include="js\angularjs\angular-route.min.js" />
+    <Content Include="Handlers\LoadingDictionary.ashx" />
+    <Content Include="Handlers\HomePageHandler.ashx" />
+    <Content Include="Handlers\LoginHandler.ashx" />
+    <Content Include="Handlers\CustomreportHandler.ashx" />
+    <Content Include="Handlers\FileManagerHandler.ashx" />
+    <Content Include="js\AnalysisList\SigningRate.js" />
+    <Content Include="Handlers\MenuListHandler.ashx" />
+    <Content Include="Handlers\UserManagerHandler.ashx" />
+    <None Include="Properties\PublishProfiles\hnweb.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="Web1.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ztree\css\awesomeStyle\awesome.less" />
+    <Content Include="ztree\css\awesomeStyle\fa.less" />
+    <Content Include="ztree\js\ztree.3.5.26.zip" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuperviseAnalysis.BLL\SuperviseAnalysis.BLL.csproj">
+      <Project>{256c0bca-de6c-42cf-a5dd-758e5fa0ba2d}</Project>
+      <Name>SuperviseAnalysis.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperviseAnalysis.Common\SuperviseAnalysis.Common.csproj">
+      <Project>{d1699b7c-3517-4263-bcfc-f425cbdaacfd}</Project>
+      <Name>SuperviseAnalysis.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperviseAnalysis.MODEL\SuperviseAnalysis.MODEL.csproj">
+      <Project>{a39e53c6-2381-4d25-b8bf-56c2df62ec67}</Project>
+      <Name>SuperviseAnalysis.MODEL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10532</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:17261/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
